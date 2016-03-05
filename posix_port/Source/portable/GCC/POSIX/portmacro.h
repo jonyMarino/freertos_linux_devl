@@ -51,7 +51,7 @@ typedef unsigned long UBaseType_t;
 	#define portBYTE_ALIGNMENT		4
 #endif
 
-//TODO: check portREMOVE_STATIC_QUALIFIER
+/*TODO: check portREMOVE_STATIC_QUALIFIER*/
 #define portREMOVE_STATIC_QUALIFIER
 
 /*-----------------------------------------------------------*/
