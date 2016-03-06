@@ -8,9 +8,20 @@ This work is based on the the original work of William Davy on [Posix/Linux Simu
 
 ## Start
 ### Get the tool
-Get the FreeRTOS v8.2.3 with `make -f Makefile.tools`
+Get the FreeRTOS v8.2.3 with `make -f Makefile.tools`  
+`git clone https://github.com/peterzos/lwip.git`  
+`git clone https://github.com/peterzos/lwip-contrib.git`  
+
 
 ### Run the first example
 Under examples/demo, run `make`, then `./main.out` to see output.
+
+### Run the second example
+`cd examples/freertos-lwip_ppp/lwip_obj/`  
+`make` 
+`cd ..`  
+`make`  
+`./demo`
+
 
 See demo makefile to create your own program.
