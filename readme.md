@@ -14,14 +14,17 @@ Get the FreeRTOS v8.2.3 with `make -f Makefile.tools`
 
 
 ### Run the first example
-Under examples/demo, run `make`, then `./main.out` to see output.
+Under examples/freertos-demo, run `make`, then `./main.out` to see output.
 
 ### Run the second example
 `cd examples/freertos-lwip_ppp/lwip_obj/`  
-`make` 
+`make`  
 `cd ..`  
 `make`  
-`./demo`
+`./demo`  
+  
+For debugging use examples/freertos-lwip_ppp/.gdbinit  
+
 
 
 See demo makefile to create your own program.

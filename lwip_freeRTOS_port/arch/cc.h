@@ -36,6 +36,7 @@
 #include <string.h>
 #include <sys/time.h>
 #include <limits.h>
+#include <errno.h>
 
 #define LWIP_PROVIDE_ERRNO
 

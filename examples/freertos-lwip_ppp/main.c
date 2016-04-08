@@ -122,7 +122,10 @@
 #include "recmutex.h"
 #include "semtest.h"
 
+#include "lwip/opt.h"
 #include "lwip/tcpip.h"
+
+#include "ppp_demo.h"
 
 /* Priority definitions for the tasks in the demo application. */
 #define mainLED_TASK_PRIORITY		( tskIDLE_PRIORITY + 1 )
@@ -169,7 +172,7 @@ int main( void )
 
 	debug_flags = LWIP_DBG_OFF;
 
-	/*debug_flags |= (LWIP_DBG_ON|LWIP_DBG_TRACE|LWIP_DBG_STATE|LWIP_DBG_FRESH|LWIP_DBG_HALT); */
+	debug_flags |= (LWIP_DBG_ON|LWIP_DBG_TRACE|LWIP_DBG_STATE|LWIP_DBG_FRESH|LWIP_DBG_HALT);
 
 	/* Initialise hardware and utilities. */
 	vParTestInitialise();
@@ -183,6 +186,10 @@ int main( void )
    /* initialise PPP. This needs to be done only once after boot up, to
     * initialize global variables, etc. */
    //pppInit();
+
+   xTaskCreate(task_ppp_demo, "vTaskPPP_demo", 512,        NULL, (tskIDLE_PRIORITY + 1UL), (TaskHandle_t *) NULL);
+   xTaskCreate(task_serial_rx, "vTaskPPP_rx", 512,        NULL, (tskIDLE_PRIORITY + 1UL), (TaskHandle_t *) NULL);
+   vTaskStartScheduler();
 
 
 
@@ -456,6 +463,6 @@ void vApplicationIdleHook( void )
 {
 	/* The co-routines are executed in the idle task using the idle task
 	hook. */
-	vCoRoutineSchedule();
+	//vCoRoutineSchedule();
 }
 /*-----------------------------------------------------------*/

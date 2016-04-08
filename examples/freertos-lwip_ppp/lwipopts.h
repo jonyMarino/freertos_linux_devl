@@ -35,7 +35,7 @@
 #include "arch/cc.h"
 
 #define LWIP_IPV4          1
-#define LWIP_IPV6          1
+#define LWIP_IPV6          0
 
 #define LWIP_DBG_MIN_LEVEL 0
 #define LWIP_COMPAT_SOCKETS 1
@@ -47,7 +47,7 @@
 #define TCPDUMP_DEBUG LWIP_DBG_ON
 
 #define SLIP_DEBUG       LWIP_DBG_OFF
-#define PPP_DEBUG        LWIP_DBG_OFF
+#define PPP_DEBUG        LWIP_DBG_ON
 #define MEM_DEBUG        LWIP_DBG_OFF
 #define MEMP_DEBUG       LWIP_DBG_OFF
 #define PBUF_DEBUG       LWIP_DBG_OFF
@@ -71,6 +71,12 @@
 #define TCP_FR_DEBUG     LWIP_DBG_ON
 #define TCP_QLEN_DEBUG   LWIP_DBG_ON
 #define TCP_RST_DEBUG    LWIP_DBG_ON
+
+/*#define SIO_DEBUG		LWIP_DBG_ON*/
+
+#define TCPIP_MBOX_SIZE						5
+#define DEFAULT_TCP_RECVMBOX_SIZE           5
+#define DEFAULT_UDP_RECVMBOX_SIZE           5
 
 extern unsigned char debug_flags;
 #define LWIP_DBG_TYPES_ON debug_flags
@@ -135,7 +141,8 @@ a lot of data that needs to be copied, this should be set high. */
 #define PBUF_POOL_SIZE          200
 
 /* PBUF_POOL_BUFSIZE: the size of each pbuf in the pbuf pool. */
-#define PBUF_POOL_BUFSIZE       128
+/*#define PBUF_POOL_BUFSIZE       128*/
+#define PBUF_POOL_BUFSIZE       332
 
 /* PBUF_LINK_HLEN: the number of bytes that should be allocated for a
    link level header. */
