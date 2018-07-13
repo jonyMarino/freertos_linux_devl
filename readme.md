@@ -7,8 +7,10 @@ For IoT, if it cannot run Linux, then should use FreeRTOS + lwIP (?).
 This work is based on the the original work of William Davy on [Posix/Linux Simulator for FreeRTOS](http://www.freertos.org/FreeRTOS-simulator-for-Linux.html), and [megakilo fork](https://github.com/megakilo/FreeRTOS-Sim).
 
 ## Start
+Clone with --recursive
 ### Get the tool
-Get the FreeRTOS v8.2.3 with `make -f Makefile.tools`  
+Get the FreeRTOS v9.0.0 with `make -f Makefile.tools`  
+if you didn't clone with --recursive
 `git clone https://github.com/peterzos/lwip.git`  
 `git clone https://github.com/peterzos/lwip-contrib.git`  
 
